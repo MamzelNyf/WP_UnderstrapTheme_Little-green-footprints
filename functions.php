@@ -35,28 +35,61 @@ foreach ( $understrap_includes as $file ) {
 }
 
 
-function themename_custom_header_setup() {
-    $defaults = array(
-        // Default Header Image to display
-        'default-image'         => get_template_directory_uri() . '/images/headers/default.jpg',
+//header
+function lgp_custom_header_setup() {
+    $args = array(
+        /// Default Header Image to display
+        'default-image'      =>'',
         // Display the header text along with the image
-        'header-text'           => false,
+        'header-text'           => true,
         // Header text color default
         'default-text-color'        => '000',
         // Header image width (in pixels)
-        'width'             => 1000,
+        'width'             => 2000,
         // Header image height (in pixels)
-        'height'            => 198,
+        'height'            => 1200,
         // Header image random rotation default
         'random-default'        => false,
         // Enable upload of image file in admin 
-        'uploads'       => false,
-        // function to be called in theme head section
-        'wp-head-callback'      => 'wphead_cb',
-        //  function to be called in preview page head section
-        'admin-head-callback'       => 'adminhead_cb',
-        // function to produce preview markup in the admin screen
-        'admin-preview-callback'    => 'adminpreview_cb',
+        'uploads'       => true,
+        // Add support Video
+        // 'video' => true,
         );
+        add_theme_support( 'custom-header', $args );
 }
-add_action( 'after_setup_theme', 'themename_custom_header_setup' );
+add_action( 'after_setup_theme', 'lgp_custom_header_setup' );
+
+
+//Update settings for Polylang plugin
+//Enable Custom Post Category translation
+add_filter('pll_get_post_types', 'add_cpt_to_pll', 10, 2);
+function add_cpt_to_pll($post_types, $hide) {
+    if ($hide)
+        // hides 'my_cpt' from the list of custom post types in Polylang settings
+        unset($post_types['ecolo-tips']);
+    else
+        // enables language and translation management for 'my_cpt'
+        $post_types['ecolo-tips'] = 'ecolo-tips';
+    return $post_types;
+}
+
+//Enable Logo change per Language
+add_filter( 'get_custom_logo', 'my_polylang_logo' );
+function my_polylang_logo() {
+   if ( function_exists( 'pll_current_language' ) ) {
+      $logos = array(
+		'en' => 'logo-en.png',
+		'fr' => 'logo-fr.png',
+      );
+      $current_lang = pll_current_language();
+      $img_path = get_stylesheet_directory_uri() . '/images/';
+      if ( isset( $logos[ $current_lang ] ) ) {
+         $logo_url = $img_path . $logos[$current_lang];
+      } else {
+         $logo_url = $img_path . $logos['en'];
+      }
+      $home_url = home_url();
+      $html = sprintf( '<a href="%1$s" rel="home" itemprop="url"><img class="lgf-logo" src="%2$s"></a>', esc_url( $home_url ), $logo_url);
+   }
+   return $html;   
+}
