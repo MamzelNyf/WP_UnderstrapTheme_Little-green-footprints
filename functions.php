@@ -27,6 +27,7 @@ $understrap_includes = array(
 	//includes my functions
 	'/my-custom-header.php',                // Custom Header'
 	'/polylang-update.php',                 // Update settings for Polylang : Custom Post Types and Logo
+	'/helpers.php',                			// Update settings for Polylang : Custom Post Types and Logo
 
 );
 
@@ -37,8 +38,3 @@ foreach ( $understrap_includes as $file ) {
 	}
 	require_once $filepath;
 }
-
-/// Remove anything that looks like an archive title prefix
-add_filter('get_the_archive_title', function ($title) {
-    return preg_replace('/^\w+: /', '', $title);
-});
