@@ -28,9 +28,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="site-info">
 
 						<!-- powered by Wordpress deleted -->
-							<a href="<?php echo esc_url( __( 'https://creativeontheroad.com/') ); ?>">
-								<?php printf( __( 'Proudly customised by MamzelNyf')); ?>
-							</a>
+						<div class="my-1 text-center">
+							<a href=""><i class="fa fa-instagram"></i></a>
+							<a href=""><i class="fa fa-facebook"></i></a>
+							<a href="index.php/about" class="mx-2">About</a>
+							<span class="text-white">-</span>
+							<a href="index.php/contact" class="mx-2">Contact</a>
+						</div>
+						<div class="m-auto text-center my-2">
+							<p class="d-inline text-white">All rights reserved © 2019 Les Petits Pas Verts - Blog lifestyle - </p>
+							<a href="<?php echo esc_url( __( 'https://shedesign.dev') ); ?>" class="d-inline"><?php printf( __( 'MamzelNyf')); ?></a>
+						</div>
 
 					</div><!-- .site-info -->
 

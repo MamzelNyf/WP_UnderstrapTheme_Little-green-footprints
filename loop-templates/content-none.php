@@ -36,8 +36,8 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 				get_search_form();
 		else : ?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'understrap' ); ?></p>
+			<!-- pll_e function enable to use custom strings for language -->
+			<p><?php pll_e( 'Sorry, there is no post published in this section yet. Please come back later :)', 'understrap' ); ?></p>
 			<?php
 				get_search_form();
 		endif; ?>

@@ -47,7 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="hovereffect">
 							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/House-button.jpg" alt="button for the Home category page" data-pin-nopin="true">
 							<div class="overlay">
-							<a href="index.php//category_ecolo_tips/the-house/" title="The House" class="info">The House</a>
+							<a href="index.php/category_ecolo_tips/the-house/" title="The House" class="info">The House</a>
 							</div>
 						</div>
 					</div>
@@ -80,7 +80,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<div class="mx-lg-5">
 				<?php while ( have_posts() ) : the_post(); ?>
 	
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+					<?php get_template_part( 'loop-templates/content', 'homepage' ); ?>
 	
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.

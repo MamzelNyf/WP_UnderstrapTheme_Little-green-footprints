@@ -20,10 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
-			<main class="site-main" id="main">
+			<main class="site-main mx-3" id="main">
 
 				<?php if ( have_posts() ) : ?>
 
@@ -66,8 +63,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
 
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 		</div><!-- .row -->
 

@@ -17,21 +17,22 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php if ( has_post_thumbnail() ) : ?>
-			<img src="<?php the_post_thumbnail_url(); ?>" data-pin-nopin="true"/>
-				</a>
+	<div class="entry-content row">
+		<div class="col-lg-6">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<img src="<?php the_post_thumbnail_url(); ?>" data-pin-nopin="true"/>
 			<?php endif; ?>
-		<?php the_content(); ?>
-
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
+		</div>
+		<div class="col-lg-6">
+			<?php the_content(); ?>
+	
+			<?php
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
+		</div><!-- .entry-content -->
 </article><!-- #post-## -->

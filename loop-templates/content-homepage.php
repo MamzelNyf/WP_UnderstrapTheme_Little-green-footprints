@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post partial template.
+ * Partial template for content in page.php
  *
  * @package understrap
  */
@@ -15,18 +15,12 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-
-			<?php understrap_posted_on(); ?>
-
-		</div><!-- .entry-meta -->
-
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large','class=round-shadow' ); ?>
-
 	<div class="entry-content">
-
+		<?php if ( has_post_thumbnail() ) : ?>
+			<img src="<?php the_post_thumbnail_url(); ?>" data-pin-nopin="true"/>
+		<?php endif; ?>
 		<?php the_content(); ?>
 
 		<?php
@@ -36,16 +30,7 @@ defined( 'ABSPATH' ) || exit;
 				'after'  => '</div>',
 			)
 		);
-
-		//display the button Like on post pages
-		if(function_exists('wp_ulike')) wp_ulike('get');
 		?>
+
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
 </article><!-- #post-## -->

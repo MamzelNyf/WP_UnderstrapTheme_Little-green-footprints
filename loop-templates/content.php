@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail','data-pin-nopin="true"' ); ?>
 
 	<div class="entry-content">
 
@@ -46,11 +46,5 @@ defined( 'ABSPATH' ) || exit;
 		?>
 
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
