@@ -26,24 +26,60 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php endif; ?>
 <div class="wrapper" id="page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="mx-5" id="content" tabindex="-1">
 
-		<div class="row">
+		<div class="row ">
 
 			<main class="site-main" id="main">
+				<div class="nav-category row">
+					<div class="col-lg-3 col-sm-6 col-xs-12">
+						<div class="hovereffect">
+							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/House-button.jpg" alt="button for the Home category page" data-pin-nopin="true">
+							<div class="overlay">
+								<a href="" class="info">The Home</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-xs-12">
+						<div class="hovereffect">
+							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/Shopping-button.jpg" alt="button for the Shopping category page" data-pin-nopin="true">
+							<div class="overlay">
+								<a href="" class="info">The Shopping</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-xs-12">
+						<div class="hovereffect">
+							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/Health-button.jpg" alt="button for the Health category page" data-pin-nopin="true">
+							<div class="overlay">
+								<a href="" class="info">The Health</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 col-xs-12">
+						<div class="hovereffect">
+							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/Food-button.jpg" alt="button for the Food category page" data-pin-nopin="true">
+							<div class="overlay">
+								<a href="" class="info">The Food</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'loop-templates/content', 'page' ); ?>
-
-				<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-				?>
-
-			<?php endwhile; // end of the loop. ?>
+			<div class="mx-lg-5">
+				<?php while ( have_posts() ) : the_post(); ?>
+	
+					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+	
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+					?>
+	
+				<?php endwhile; // end of the loop. ?>
+			</div>
 			</main><!-- #main -->
 
 

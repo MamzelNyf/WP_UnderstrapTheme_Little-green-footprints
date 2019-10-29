@@ -15,18 +15,13 @@ $background: #E7D8D7;
     font-family: 'Raleway', sans-serif;
     src: url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
   }
-  
 @font-face {
-  font-family: 'Righteous', cursive;
-  src: url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+  font-family: 'Fredericka the Great', cursive;
+  src: url('/themes/Little-Green-Footprints-Theme/fonts/FrederickatheGreat-Regular.ttf');
 }
-@font-face {
-  font-family: 'Amatic SC', cursive;
-  src: url('/themes/understrap-master/fonts/AmaticSC-Regular.ttf');
-}
-
 $font-family-sans-serif: 'Raleway' !default;
-$headings-font-family: 'Amatic SC' !default;
+$headings-font-family: 'Fredericka the Great' !default;
+$headings-font-weight: 100!default;
 
 $navbar-dark-color: $light-green; 
 $navbar-dark-hover-color: lighten($light-green, 20%); 
