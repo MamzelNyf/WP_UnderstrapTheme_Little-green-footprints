@@ -17,10 +17,11 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
 	<div class="entry-content">
-
+		<?php if ( has_post_thumbnail() ) : ?>
+			<img src="<?php the_post_thumbnail_url(); ?>" data-pin-nopin="true"/>
+				</a>
+			<?php endif; ?>
 		<?php the_content(); ?>
 
 		<?php

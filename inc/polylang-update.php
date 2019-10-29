@@ -39,3 +39,6 @@ function my_polylang_logo() {
    }
    return $html;   
 }
+
+//register a string called LOGO and put all links via wp-admin/string-translation in polylang
+pll_register_string("LOGO","/images/Logo-blue-EN.svg"); // this url for default language
