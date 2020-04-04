@@ -20,14 +20,12 @@ defined( 'ABSPATH' ) || exit;
 				<?php endif; ?>
 				<div class="card-section p-3">
 					<div class="bio">
-						<h2 class="section-title">
 						<?php
 							the_title(
 								sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 								'</a></h2>'
 							);
 							?>
-						</h2>
 						<?php the_excerpt(); ?>
 					</div>
 				</div>

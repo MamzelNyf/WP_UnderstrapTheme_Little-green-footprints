@@ -47,7 +47,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="hovereffect">
 							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/House-button.jpg" alt="button for the Home category page" data-pin-nopin="true">
 							<div class="overlay">
-							<a href="index.php/category_ecolo_tips/the-house/" title="The House" class="info">The House</a>
+							<?php $lang = pll_get_post_language($post->ID); $url = pll_translate_string('<a href="index.php/category_ecolo_tips/the-house/" title="The House" class="info">The House</a>',$lang); echo $url; ?>
 							</div>
 						</div>
 					</div>
@@ -55,7 +55,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="hovereffect">
 							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/Shopping-button.jpg" alt="button for the Shopping category page" data-pin-nopin="true">
 							<div class="overlay">
-								<a href="index.php/category_ecolo_tips/shopping/" class="info">The Shopping</a>
+							<?php $lang = pll_get_post_language($post->ID); $url = pll_translate_string('<a href="index.php/category_ecolo_tips/shopping/" title="The Shopping" class="info">The Shopping</a>',$lang); echo $url; ?>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="hovereffect">
 							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/Health-button.jpg" alt="button for the Health category page" data-pin-nopin="true">
 							<div class="overlay">
-								<a href="index.php//category_ecolo_tips/health/" class="info">The Health</a>
+							<?php $lang = pll_get_post_language($post->ID); $url = pll_translate_string('<a href="index.php/category_ecolo_tips/health/" title="The Health" class="info">The Health</a>',$lang); echo $url; ?>
 							</div>
 						</div>
 					</div>
@@ -71,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="hovereffect">
 							<img class="img-responsive" src=" <?php bloginfo('stylesheet_directory'); ?>/images/Food-button.jpg" alt="button for the Food category page" data-pin-nopin="true">
 							<div class="overlay">
-								<a href="index.php//category_ecolo_tips/food/" class="info">The Food</a>
+							<?php $lang = pll_get_post_language($post->ID); $url = pll_translate_string('<a href="index.php/category_ecolo_tips/food/" title="The Food" class="info">The Food</a>',$lang); echo $url; ?>
 							</div>
 						</div>
 					</div>

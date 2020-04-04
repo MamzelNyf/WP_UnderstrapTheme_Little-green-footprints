@@ -41,6 +41,12 @@ function my_polylang_logo() {
 }
 
 //register a string called LOGO and put all links via wp-admin/string-translation in polylang
-pll_register_string("LOGO","/images/Logo-blue-EN.svg"); // this url for default language
+pll_register_string("LOGO","Logo-blue-EN.svg"); // this url for default language
 //register a string 
-pll_register_string("NOPOST","Sorry, there is no post published in this section yet. Please come back later :)"); // this url for default language
+///// this url for no post archive
+pll_register_string("NOPOST","Sorry, there is no post published in this section yet. Please come back later :)"); 
+/////Register Home buttons translations
+pll_register_string("HOUSE",'<a href="index.php/category_ecolo_tips/the-house/" title="The House" class="info">The House</a>'); 
+pll_register_string("SHOPPING",'<a href="index.php/category_ecolo_tips/shopping/" title="The Shopping" class="info">The Shopping</a>'); 
+pll_register_string("FOOD",'<a href="index.php/category_ecolo_tips/food/" title="The Food" class="info">The Food</a>'); 
+pll_register_string("HEALTH",'<a href="index.php/category_ecolo_tips/health/" title="The Health" class="info">The Health</a>'); 

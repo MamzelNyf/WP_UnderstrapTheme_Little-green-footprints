@@ -13,12 +13,6 @@ defined( 'ABSPATH' ) || exit;
 
 <section class="no-results not-found">
 
-	<header class="page-header">
-
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'understrap' ); ?></h1>
-
-	</header><!-- .page-header -->
-
 	<div class="page-content">
 
 		<?php
@@ -36,6 +30,12 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 				get_search_form();
 		else : ?>
+			<header class="page-header">
+					<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					?>
+			</header><!-- .page-header -->
 			<!-- pll_e function enable to use custom strings for language -->
 			<p><?php pll_e( 'Sorry, there is no post published in this section yet. Please come back later :)', 'understrap' ); ?></p>
 			<?php
